@@ -94,26 +94,46 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  min-height: 100vh; display: flex; align-items: center;
+  display: flex;
+  align-items: center;
   position: relative;
   min-height: 85vh;
   overflow: hidden;
   background:
-    radial-gradient(800px 400px at 20% 20%, rgba(167,139,250,0.15), transparent 70%),
-    radial-gradient(900px 600px at 80% 80%, rgba(124,58,237,0.1), transparent 70%),
+    /* luz superior más baja y suave */
+    radial-gradient(650px 320px at 20% 35%, rgba(167,139,250,0.09), transparent 70%),
+    /* luz inferior igual que antes */
+    radial-gradient(900px 600px at 80% 80%, rgba(124,58,237,0.10), transparent 70%),
     linear-gradient(180deg, #0c0b12 0%, #0f0e1a 100%);
+}
+
+
+/* Logo 3byte gigante como marca de agua en el hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+    background: url("./img/logo3byte.png") no-repeat center 5%;
+    background-size: min(420px, 62vw);
+  opacity: 2; /* un toque más visible */
+  filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.7));
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* capa de ruido sutil para textura */
 .hero::after {
   content: "";
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: url("https://grainy-gradients.vercel.app/noise.svg");
   opacity: 0.08;
   pointer-events: none;
   mix-blend-mode: overlay;
   z-index: 0;
 }
+
+/* Título principal */
 .hero-title {
   font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 800;
@@ -124,10 +144,12 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
 .hero-title span {
   color: #c4b5fd;
   text-shadow: 0 0 24px rgba(124,58,237,.25);
 }
+
 .hero-sub {
   max-width: 560px;
   margin-inline: auto;
@@ -135,53 +157,45 @@ body {
   font-size: 1.1rem;
 }
 
-
-
-/* Título con gradiente animado + shimmer sutil */
+/* Gradiente animado de texto */
 .gradient-text {
   background: linear-gradient(90deg, #e9d5ff, #ffffff, #c4b5fd);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-
-  /* efecto premium (va y vuelve) */
   background-size: 300% 100%;
   animation: textGradientSlide 12s ease-in-out infinite;
   will-change: background-position;
 }
+
 @keyframes textGradientSlide {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-.gradient-text:hover { animation-play-state: paused; }
 
-.shimmer {
-  background-size: 200% 100%;
-  animation: shimmer-move 6s linear infinite;
-}
-@keyframes shimmer-move {
-  0%   { background-position: 0% 50%; filter: drop-shadow(0 0 0 rgba(124,58,237,0)); }
-  50%  { background-position: 100% 50%; filter: drop-shadow(0 2px 10px rgba(124,58,237,.15)); }
-  100% { background-position: 0% 50%; filter: drop-shadow(0 0 0 rgba(124,58,237,0)); }
+.gradient-text:hover {
+  animation-play-state: paused;
 }
 
-/* Tilt wrapper del título (NO le pongas data-aos) */
+/* Tilt del título */
 .hero-tilt {
   will-change: transform;
   transition: transform 250ms cubic-bezier(.2,.6,.2,1);
   transform-style: preserve-3d;
 }
 
-/* Botones magnéticos (levísimo follow) */
+/* Botones magnéticos */
 .hero-cta .magnet {
   transition: transform 180ms cubic-bezier(.2,.6,.2,1), box-shadow 180ms;
   will-change: transform;
 }
-.hero-cta .magnet:hover { box-shadow: 0 12px 30px rgba(124,58,237,.18); }
+.hero-cta .magnet:hover {
+  box-shadow: 0 12px 30px rgba(124,58,237,.18);
+}
 
-/* Luces violetas flotantes con parallax */
+/* Luces violetas con parallax */
 .hero-glow,
 .hero-glow-2 {
   position: absolute;

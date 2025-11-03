@@ -115,19 +115,17 @@ const projects = ref([
         slug: 'pena-boquense',
         title: 'Peña Boquense — Gestión Integral',
         short: 'App web para socios y cuotas, reservas de salones, viajes y movimientos con permisos por rol.',
-        cover: p1,
+        cover: 'https://via.placeholder.com/800x450?text=Pe%C3%B1a+Boquense',
         tags: ['WebApp', 'Gestión', 'Deportes'],
         stack: ['Vue 3', 'Bootstrap', 'Ktor', 'MySQL', 'Railway'],
-        detailRoute: '/proyectos/pena', // opcional (creá esa ruta si querés vista detalle)
+        detailRoute: '/proyectos/pena',
         images: [
-            { src: p1, alt: 'Socios — listado', caption: 'Módulo Socios: altas/bajas, estados y filtros' },
-            { src: p2, alt: 'Cuotas — gestión', caption: 'Cuotas: generación, vencimientos y cobranza' },
-            { src: p3, alt: 'Reservas — calendario', caption: 'Calendario de alquileres y disponibilidad' },
-            { src: p4, alt: 'Viajes — organización', caption: 'Viajes: listas, pagos, asignaciones' },
-            { src: p5, alt: 'Movimientos — contables', caption: 'Movimientos: registros y permisos (RBAC)' }
+            { src: 'https://via.placeholder.com/1200x675?text=Pantalla+1', alt: 'Socios', caption: 'Módulo Socios' },
+            { src: 'https://via.placeholder.com/1200x675?text=Pantalla+2', alt: 'Cuotas', caption: 'Gestión de cuotas' }
         ]
     }
 ])
+
 
 // Filtros
 const activeTag = ref('Todos')

@@ -31,8 +31,7 @@
                                         <select v-model="form.servicio" class="form-select" id="servicio">
                                             <option value="Desarrollo Web">Desarrollo Web</option>
                                             <option value="Aplicaciones">Aplicaciones</option>
-                                            <option value="Ciberseguridad">Ciberseguridad</option>
-                                            <option value="Automatización">Automatización</option>
+                                            <option value="Ciberseguridad">Seguridad</option>
                                             <option value="Mantenimiento">Mantenimiento</option>
                                         </select>
                                         <label for="servicio"><i class="bi bi-briefcase"></i> Servicio</label>

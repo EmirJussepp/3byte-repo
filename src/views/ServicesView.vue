@@ -78,8 +78,6 @@
                             <li><i class="bi bi-check2-circle"></i> Respuesta ante incidentes</li>
                         </ul>
                         <div class="stack">
-                            <span class="chip">OWASP</span>
-                            <span class="chip">Monitor</span>
                             <span class="chip">Backups</span>
                         </div>
                         <div class="mt-3 d-flex gap-2">
